@@ -123,6 +123,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
+    pg (1.2.3)
     prismic.io (1.8.2)
       hashery (~> 2.1.1)
     pry (0.13.1)
@@ -239,6 +240,7 @@ DEPENDENCIES
   haml-rails (~> 2.0)
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  pg
   prismic.io
   pry (~> 0.13.1)
   puma (~> 5.0)
