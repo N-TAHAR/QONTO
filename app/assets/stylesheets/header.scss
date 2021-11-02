@@ -1,0 +1,188 @@
+@import "variables";
+
+header{
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  height: 10vh;
+  width: 100%;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1.6rem;
+    background-color: $white;
+    height: 100%;
+    @media (min-width: $desktop) {
+      justify-content: inherit;
+      box-shadow: 0px 14px 24px 0px #1c0f7d08;
+    }
+    @media (min-width: $large) {
+      padding: 0.5rem 5.6rem;
+      height: 8.8rem;
+    }
+    .logo {
+      display: block;
+      height: 2.8rem;
+      svg {
+        height: 100%;
+        .fill-logo-1 {
+          fill: $secondary;
+        }
+        .fill-logo-2 {
+          fill: $primary;
+        }
+      }
+      @media (min-width: $desktop) {
+        margin-right: 2rem;
+      }
+    }
+
+    ul {
+      position: absolute;
+      height: 90vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      background-color: $white;
+      z-index: -1;
+      top: -90vh;
+      left: 0;
+      padding: 2.4rem;
+      transform: translateY(0vh);
+      transition: transform 0.75s cubic-bezier(0.5, -0.01, 0, 1.005);
+
+      &.open {
+        transform: translateY(100vh);
+      }
+      @media (min-width: $desktop) {
+        position: inherit;
+        height: inherit;
+        width: inherit;
+        flex-direction: row;
+        z-index: inherit;
+        top: inherit;
+        padding: inherit;
+        transform: inherit;
+        transition: inherit;
+        align-items: center;
+        flex-grow: 1;
+        opacity: 1;
+      }
+
+      li {
+        text-decoration: none;
+        &:not(:last-child) {
+          padding-bottom: 2.6rem;
+          margin-bottom: 2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          & > a {
+            width: 100%;
+          }
+        }
+        &:not(:last-child, :nth-last-child(2)) {
+          border-bottom: 0.1rem solid $gray;
+        }
+
+        @media (min-width: $desktop) {
+          font-weight: 200;
+          &:not(:last-child) {
+            padding-bottom: 0;
+            margin-bottom: 0;
+          }
+          &:not(:last-child, :nth-last-child(2)) {
+            border-bottom: inherit;
+            margin-right: 3.2rem;
+          }
+          &:last-child {
+            margin-left: auto;
+          }
+        }
+      }
+
+      .chevron-down {
+        width: 1.2rem;
+        height: 1.2rem;
+        vertical-align: middle;
+        @media (min-width: $desktop) {
+          margin-left: 1rem
+        }
+      }
+
+      .button-login {
+        display: block;
+        text-align: center;
+        padding: 0.8rem 2.7rem;
+        color: $primary;
+        font-weight: 500;
+        border: 0.1rem solid $primary;
+        border-radius: 0.4rem;
+        @media (min-width: $tablet) {
+          max-width: 32rem;
+          padding: 1.6rem 2.7rem;
+        }
+        @media (min-width: $desktop) {
+          border: inherit;
+          text-align: inherit;
+          padding: inherit;
+          font-weight: inherit;
+          border: inherit;
+          border-radius: inherit;
+          color: $secondary;
+        }
+      }
+    }
+    .right-element {
+      display: flex;
+      align-items: center;
+    }
+
+    .button-register {
+      padding: 1.2rem 1.4rem;
+      border-radius: 0.4rem;
+      background-color: $primary;
+      color: $white;
+      font-size: 1.2rem;
+      margin-right: 2rem;
+      @media (min-width: $tablet) {
+        font-size: 1.6rem;
+      }
+    }
+
+    .burger-menu {
+      position: relative;
+      width: 2.4rem;
+      height: 2.4rem;
+      cursor: pointer;
+      @media (min-width: $desktop) {
+        display: none;
+      }
+      &::before, &::after {
+        position: absolute;
+        left: 0;
+        content: '';
+        height: 0.2rem;
+        width: 100%;
+        background-color: $secondary;
+        transform: translate(0) rotate(0);
+        transition: transform 0.75s cubic-bezier(0.5, -0.01, 0, 1.005);
+      }
+      &::before {
+        top: 25%;
+      }
+      &::after {
+        top: 75%;
+      }
+      &.open {
+        &::before {
+          transform: translate(0,0.6rem) rotate(45deg);
+        }
+        &::after {
+          transform: translate(0,-0.6rem) rotate(-45deg);
+        }
+      }
+    }
+  }
+}

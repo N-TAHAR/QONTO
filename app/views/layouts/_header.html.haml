@@ -1,0 +1,23 @@
+%header
+  %nav
+    %a{ href: "/", class: "logo" }
+      = render "svg/logo_qonto.svg"
+    %ul.menu-list
+      %li
+        = "Business"
+        = render "svg/chevron_down.svg"
+      %li
+        = "Création d'entreprise"
+        = render "svg/chevron_down.svg"
+      %li
+        = "Fonctionnalités"
+        = render "svg/chevron_down.svg"
+      %li
+        %a{ href: "#" }= "Tarifs"
+      %li
+        %a{ href: "#", class: "button-login"}= "Se connecter"
+    .right-element
+      %a{ href: "#", class: "button-register"}= "Ouvrir un compte"
+      .burger-menu
+
+=javascript_pack_tag 'header'

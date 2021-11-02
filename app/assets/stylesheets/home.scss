@@ -1,3 +1,104 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "variables";
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+  max-width: 64rem;
+  margin: auto;
+  min-height: 70vh;
+  @media (min-width: $tablet) {
+    max-width: 84rem;
+    flex-wrap: wrap;
+    flex-flow: row;
+  }
+  @media (min-width: $desktop) {
+    max-width: 130rem;
+  }
+  .left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: $desktop) {
+      align-items: flex-start;
+      padding: 1.2rem;
+    }
+    h1 {
+      font-size: 4rem;
+      font-weight: 500;
+      margin-bottom: 2.4rem;
+      text-align: center;
+      @media (min-width: $tablet) {
+        font-size: 5.6rem;
+      }
+      @media (min-width: $desktop) {
+        flex-direction: row;
+        text-align: left;
+      }
+    }
+
+    ul {
+      margin-bottom: 3.2rem;
+      @media (min-width: $tablet) {
+        font-size: 1.8rem;
+        text-align: left;
+      }
+      @media (min-width: $desktop) {
+        text-align: left;
+      }
+      li {
+        display: flex;
+        line-height: 2.4rem;
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+
+        svg {
+          max-width: 2rem;
+          height: 100%;
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-weight: 200;
+      @media (min-width: $tablet) {
+        font-size: 1.6rem;
+      }
+    }
+
+    .buttons {
+      width: 100%;
+      .primary-button {
+        margin-bottom: 1.6rem;
+      }
+
+      @media (min-width: $tablet) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-flow: row;
+        & > a {
+          width: 100%;
+          max-width: 32rem;
+        }
+        .primary-button {
+          margin-bottom: inherit;
+          margin-right: 2rem;
+        }
+      }
+
+      @media (min-width: $desktop) {
+        justify-content: flex-start;
+      }
+    }
+  }
+  .qonto-card {
+    width: 100%;
+  }
+}

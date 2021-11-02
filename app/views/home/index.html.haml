@@ -1,1 +1,14 @@
-%h1 Qonto !
+.hero
+  .left-side
+    %h1=@document["home.title"].as_text()
+    %ul
+      - @document["home.contents"].each do |content|
+        %li
+          = render "svg/checkmark.svg"
+          = content.as_text()
+    .buttons
+      %a{ href: "#", class: "primary-button"}= "Comparer les offres"
+      %a{ href: "#", class: "secondary-button"}= "Découvrir Qonto"
+    %p= "30 jours gratuits - Sans engagement"
+  .image-container
+    =image_tag "qonto_card.png", class: "qonto-card"
